@@ -15,7 +15,7 @@
   display: block;
 }
 .bxslider {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   /*fix flickering when used background-image instead of <img> (on Chrome)*/
   -webkit-perspective: 1000;
