@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>sprite</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		body{_background-color: skyblue;}
+		.logo{width: 445px;height: 110px;
+			  background-image: url(../images/sprite_naver.png);
+			  background-position: 0 -317px;
+			  background-repeat:no-repeat;}
+		.logo a{display: block;line-height: 110px;
+		        text-indent: -9000px;}
+
+		.j_naver{width: 130px;height: 30px;
+			     background-image: url(../images/sprite_naver.png);
+				 background-position: -690px -516px;
+			     background-repeat: no-repeat;}
+		.j_naver:hover{background-position: -422px -612px;}
+		.j_naver a{display: block;line-height: 30px;
+		           text-indent: -999px;}
+
+		.btn{width: 100px;height: 105px;
+		     background-image: url(../images/sprite_naver.png);
+		     background-position: -420px -430px;
+		     background-repeat: no-repeat;}
+		.btn:hover{background-position: -310px -430px;}
+		.btn a{display: block;line-height: 105px;
+		       text-indent: -999px;}
+	</style>
+</head>
+<body>
+	<!-- <div class="logo">
+		
+	</div> -->
+	<h1 class="logo"><a href="#">네이버</a></h1>
+	<!-- <h1><a href=""><img src="" alt=""></a></h1> -->
+	<div class="j_naver"><a href="#">쥬니어네이버</a></div>
+	<div class="btn"><a href="#">버튼</a></div>
+</body>
+</html>
