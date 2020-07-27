@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+</head>
+<body>
+	<script>
+		var kdata=["서울","부산","청주","대구"];
+
+		kdata.forEach(printArr);
+		function printArr(item,index){
+			document.write(index+". "+item+"<br>");
+		}
+
+		function printArrOne(){
+			for(var i=0;i<kdata.length;i++){
+				document.write(i+1+". "+kdata[i]+"<br>");
+			}
+		}
+		printArrOne();
+		// printArrOne(); 함수실행
+
+		var data = [10,20,30,40,30,60,70,30,90,100];
+
+		document.write(data+"<br>");
+		document.write(data.indexOf(30)+"<br>");
+		// document.write(data.indexOf(30)+"<br>"); //30의 index 값
+		document.write(data.lastIndexOf(30)+"<br>");
+		// document.write(data.lastIndexOf(30)+"<br>"); //끝에서부터 30을 찾음
+		document.write(data.indexOf(30,3)+"<br>");
+		// document.write(data.indexOf(30,3)); //3 다음에 나오는 데이터 값중 30이라는 데이터를 찾음
+		document.write(data.indexOf(300));
+		
+	</script>
+</body>
+</html>

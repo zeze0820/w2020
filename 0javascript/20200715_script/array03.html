@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>array03</title>
+</head>
+<body>
+	<script>
+		var com = [95,88,,72,68,,69,82,78,87];
+
+		function printArr(){
+			var sum = 0;
+			var n = com.length; //com의 개수
+			var count = 0; //입력점수 카운터 변수
+
+			for(var i=0;i<n;i++){
+				if(com[i]==undefined){
+					continue; //undefined일 때는 else로 넘어가지 않고 다시 위로 올라감
+				}else{
+					sum = sum + com[i]; //sum += com[i]
+					count++; //count = count + 1; 개수가 10개로 나오기 때문에 값이 빈 숫자들을 빼야 하기 때문.
+				}	
+			}
+			return (sum/count);
+		}
+		var getAvg = printArr();
+		document.write(getAvg); //NaN - not a number
+	</script>
+</body>
+</html>

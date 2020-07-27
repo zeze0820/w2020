@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>text02</title>
+	<script>
+		function change(){
+			var text = document.getElementById("text");
+			text.style.color = "red"; //id값은 단일항목이기 때문에 [0]을 넣을 필요 없음
+			text.style.background = "gray";
+			alert("안녕하세요.\n \t 저는 \'신지혜\'입니다."); //t는 들여쓰기(tab키)
+			document.getElementByTagName("body")[0].style.background = "skyblue";
+		}
+		function reset(){
+			var text = document.getElementById("text");
+			text.style.color = "initial" //초기값
+			text.style.background = "initial" //초기값
+		}
+	</script>
+</head>
+<body>
+	<p id="text">안녕하세요</p>
+	<button type="button" onclick="change()">버튼1</button>
+	<button type="button" onclick="reset()">버튼1</button>
+</body>
+</html>
