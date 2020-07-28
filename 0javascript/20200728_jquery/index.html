@@ -5,9 +5,96 @@
 	<meta charset="UTF-8">
 	<title>문서 제목</title>
 	<link rel="stylesheet" href="../../css/reset.css">
-	<script src="../../jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			// $("p").hide(); 전체 숨기기
+			// $("p").eq(0).hide(); //특정 배열만 숨기기
+			var $plen = $("p").length;
+			console.log($plen);
+			for(var i=0;i<$plen;i++){
+				// $("p").eq(i).hide();
+				$("p").eq(i).css("background","gray").css("color","red");
+				//display:none하겠다,  배경색을 gray로 하겠다, 폰트 컬러를 red로 하겠다
+			}
+			// $(선택자)대상.on("click",function(){});
+			// $(선택자).click(function(){});
+			// dom.addEventListener("click",function(){});
+			$(".btn_hide").click(function(){
+				$("p").hide();
+			});
+			$(".btn_show").click(function(){
+				$("p").show();
+			});
+		});
+	</script>
+
+	<script>
+		$(document).ready(function(){
+			
+		});
+	</script>
+
 </head>
 <body>
-	
+	<p>1.Lorem ipsum dolor.</p>
+	<p>2.Fugiat, doloribus, expedita.</p>
+	<p>3.Necessitatibus, saepe doloribus!</p>
+	<p>4.Dolore, deleniti, mollitia?</p>
+	<p>5.Quibusdam, aspernatur officia!</p>
+	<p>6.Architecto, sint, cupiditate.</p>
+	<p>7.Voluptate, possimus, asperiores.</p>
+	<p>8.Unde, deleniti, ullam.</p>
+	<p>9.Tenetur, animi incidunt.</p>
+	<p>10.Voluptatibus, perspiciatis, beatae.</p>
+
+	<button type="button" class="btn_show">button1</button>
+	<button type="button" class="btn_hide">button2</button>
+	<!-- <script>
+		// var tagP = document.getElementsByTagName("p");
+		
+		// for(i=0;i<tagP.length;i++){
+		// 	tagP[i].style.display = "none";
+		// } 모든 p태그 화면에 안나오게 하는 거
+
+	</script> -->
+
+	<!-- tab 메뉴 만들기 -->
+	<style>
+		ul>li{float:left;width: 100px;background: skyblue;margin-right:10px;
+			  text-align:center;line-height:40px;}
+		.box1,.box2,.box3{width: 400px;padding:20px;border: 1px solid #000;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".box2,.box3").hide();
+			$("ul>li").eq(0).click(function(){
+				$(".box1").show();
+				$(".box2").hide();
+				$(".box3").hide();
+				//$(".box1,.box2,.box3").hide();
+				//$(".box1").show(); 위와 같은 식
+			});
+			$("ul>li").eq(1).click(function(){
+				$(".box1").hide();
+				$(".box2").show();
+				$(".box3").hide();
+			});
+			$("ul>li").eq(2).click(function(){
+				$(".box1").hide();
+				$(".box2").hide();
+				$(".box3").show();
+			});
+		});
+	</script>
+	<ul class="clearfix">
+		<li>menu1</li> <!-- $("ul>li").eq(0).click(function(){}); -->
+		<li>menu2</li> <!-- $("ul>li").eq(1).click() -->
+		<li>menu3</li> <!-- $("ul>li").eq(2).click() -->
+	</ul>
+	<!-- div.box$*3>{$. }+lorem10 -->
+	<div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, dolorem.</div>
+	<div class="box2">2. Ducimus laudantium voluptatem laborum rem quo unde aperiam tempore, veniam?</div>
+	<div class="box3">3. Dignissimos eveniet tempore quos velit in repellendus quia ipsa veritatis.</div>
 </body>
 </html>
