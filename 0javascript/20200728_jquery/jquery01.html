@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		ul>li{float:left;width: 100px;background: skyblue;
+			  line-height:40px;text-align:center;margin-right:10px;}
+		.boxWrap{
+			width: 350px;border: 1px solid #000;padding:20px;
+		}
+		.boxWrap .box2,
+		.boxWrap .box3{display:none;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("ul>li").eq(0).click(function(){
+				$(".boxWrap>div").hide().eq(0).show();
+			});
+			$("ul>li").eq(1).click(function(){
+				$(".boxWrap>div").hide().eq(1).show();
+			});
+			$("ul>li").eq(2).click(function(){
+				$(".boxWrap>div").hide().eq(2).show();
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul class="clearfix">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+	</ul>
+	<div class="boxWrap">
+		<div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi autem repellat, suscipit amet, adipisci voluptates ab optio quae necessitatibus vel.</div>
+		<div class="box2">2. Ad doloremque aspernatur, natus dolores iusto in hic repellat culpa quae mollitia, maxime iure voluptatem incidunt quis accusantium provident consequuntur.</div>
+		<div class="box3">3. Sunt odio quibusdam necessitatibus id nihil eum dignissimos? Impedit eos at adipisci dolorum omnis harum, suscipit voluptatem. Vitae maiores, fugiat.</div>
+	</div>
+</body>
+</html>
