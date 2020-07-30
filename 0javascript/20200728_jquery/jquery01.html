@@ -14,24 +14,32 @@
 		}
 		.boxWrap .box2,
 		.boxWrap .box3{display:none;}
+		.active{background: #f00;}
 	</style>
 	<script>
 		$(document).ready(function(){
-			$("ul>li").eq(0).click(function(){
-				$(".boxWrap>div").hide().eq(0).show();
-			});
-			$("ul>li").eq(1).click(function(){
-				$(".boxWrap>div").hide().eq(1).show();
-			});
-			$("ul>li").eq(2).click(function(){
-				$(".boxWrap>div").hide().eq(2).show();
+			// $("ul>li").eq(0).click(function(){
+			// 	$(".boxWrap>div").hide().eq(0).show();
+			// });
+			// $("ul>li").eq(1).click(function(){
+			// 	$(".boxWrap>div").hide().eq(1).show();
+			// });
+			// $("ul>li").eq(2).click(function(){
+			// 	$(".boxWrap>div").hide().eq(2).show();
+			// });
+			$("ul>li").click(function(){
+				var liNum = $(this).index();
+				$("ul>li").removeClass();
+				$(this).addClass("active");
+				$(".boxWrap>div").hide();
+				$(".boxWrap>div").eq(liNum).fadeIn();
 			});
 		});
 	</script>
 </head>
 <body>
 	<ul class="clearfix">
-		<li>menu1</li>
+		<li class="active">menu1</li>
 		<li>menu2</li>
 		<li>menu3</li>
 	</ul>
