@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery.bxslider.js"></script>
+	<style>
+		#menu{width: 1000px;margin:auto;}
+		#menu>ul{}
+		#menu>ul>li{
+			float:left;width: 20%;line-height:40px;border-right: 1px solid #000;
+			position: relative;
+		}
+		#menu>ul>li:hover{background: #eee;}
+		#menu>ul>li:first-child{border-left: 1px solid #000;}
+		#menu>ul>li>a{display:block;text-align:center;} /*칸 꽉차게 a값 넣어짐*/
+		#menu ul.sub{display:none;}
+		#menu ul.sub{position: absolute;width: 100%;background: #eee;z-index:1} /*메인메뉴와 서브메뉴 분리*/
+		/*#menu>ul>li:first-child .sub{display:block;}*/
+		#menu ul.sub>li{width: 100%;}
+		#menu ul.sub>li:hover{background: skyblue;}
+		#menu ul.sub>li>a{display:block;text-align:center;}
+		
+		.visual{background: #ddd;height: 400px;}
+		ul.slider>li>img{width: 100%;}
+		/*<스타일시트로 서브메뉴 만들기>*/
+		/*#menu>ul>li:hover ul.sub{display:block;}*/ /*해당서브메뉴만 나오게하는 버전*/
+		/*#menu>ul:hover ul.sub{display:block;} *//*전체서브메뉴 나오게하는 버전*/
+	</style>
+	<script> //<스크립트(mouseover, mouseout)로 서브메뉴 만들기>
+		$(document).ready(function(){
+			$("#menu>ul>li").mouseover(function(){
+				var i = $(this).index();
+				$("#menu>ul>li").eq(i).find("ul.sub").css("display","block");
+				
+				// $("#menu>ul>li:eq("+i+")").find("ul.sub").css("display","block"); //위와 같은 식
+			});
+			$("#menu>ul>li").mouseout(function(){
+				$("ul.sub").css("display","none")
+			});
+
+			//$("#menu>ul>li").mouseover().mouseout(); 위와 같은 식
+
+			//<스크립트(show, hide)로 서브메뉴 만들기>
+			// $("#menu>ul>li").mouseover(function(){}).mouseout(function(){});
+			$("#menu>ul>li").mouseover(function(){
+				var i = $(this).index();
+				$("#menu>ul>li").eq(i).find("ul.sub").show(); //show는 display:block
+			}).mouseout(function(){
+				$("ul.sub").hide();
+			});
+
+			//<스크립트(slidedown)으로 서브메뉴 만들기>
+			$("#menu>ul>li").mouseenter(function(){
+				var i = $(this).index();
+				$("#menu>ul>li").eq(i).find("ul.sub").stop().slideDown(); //show는 display:block, animation에는 stop()을 넣어줘야 함.
+			}).mouseleave(function(){
+				$("ul.sub").hide();
+			});
+
+			//<스크립트(fadein, fadeout)으로 서브메뉴 만들기>
+			// $("#menu>ul>li").hover(function(){},function(){})
+			$("#menu>ul>li").hover(function(){
+				var i = $(this).index();
+				$("#menu>ul>li").eq(i).find("ul.sub").stop().fadeIn(300);
+			},function(){
+				$("ul.sub").fadeOut();
+			})
+		});
+	</script>
+	<script>
+		$(document).ready(function(){
+			$(".slider").bxSlider()
+		});
+	</script>
+</head>
+<body>
+	<!-- nav#menu>ul>li*5>a[#]>{menu$}^ul.sub>li*5>a[#]>{smenu$} -->
+	<nav id="menu">
+		<ul class="clearfix">
+			<li>
+				<a href="#">menu1</a> <!-- depth1 -->
+				<ul class="sub"> <!-- depth2 -->
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu2</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu3</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu4</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu5</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="visual">
+		<ul class="slider">
+			<li><img src="../../images/pc01.jpg" alt=""></li>
+			<li><img src="../../images/pc02.jpg" alt=""></li>
+			<li><img src="../../images/pc03.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>
