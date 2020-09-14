@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		.wrap{width: 500px;height: 500px;background:skyblue;display:flex;
+			  justify-content:center;align-items:center;}
+		.wrap1{width: 500px;height: 500px;background: pink;display:flex;}
+		.wrap1 div{
+			flex:1;display:flex;justify-content:center;align-items:center;
+			transition:0.3s;}
+		/*flex:1; = 4분의 1씩 영역 할당(div 개수가 4개이므로)*/
+		.wrap1 div:nth-child(2n){background: gray;}
+		.wrap1 div:hover{flex:2;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		
+	</div>
+	<div class="wrap1">
+		<div>Lorem</div>
+		<div>ipsum</div>
+		<div>dolor</div>
+		<div>sit</div>
+	</div>
+</body>
+</html>

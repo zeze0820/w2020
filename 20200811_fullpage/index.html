@@ -71,7 +71,9 @@
 		.f2em{font-size:2em !important}
 		.f15em{font-size:1.5em !important}
 		.mb20{margin-bottom: 20px !important}
-
+		
+		#video{position: absolute;width: 100%;height: 100%;
+			   object-fit:cover;top:0;}
 	</style>
 </head>
 <body>
@@ -85,6 +87,9 @@
 	</nav>
 	<div id="fullpage">
 		<div class="section" id="page1" data-anchor="a1st">
+			<video id="video" autoplay muted data-autolay loop>
+				<source src="video/video.mp4" type="video/mp4">
+			</video>
 			<div class="main" id="onViewOne">
 				<h3 class="f25em">Lorem ipsum.</h3>
 				<p class="f15em mb20">Lorem ipsum dolor sit.</p>
