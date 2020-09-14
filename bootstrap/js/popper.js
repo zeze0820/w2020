@@ -28,4 +28,8 @@ const defaultModifiers = [
 const createPopper = popperGenerator({ defaultModifiers });
 
 // eslint-disable-next-line import/no-unused-modules
+<<<<<<< HEAD
 export { createPopper, popperGenerator, defaultModifiers, detectOverflow };
+=======
+export { createPopper, popperGenerator, defaultModifiers, detectOverflow };
+>>>>>>> 8ca6d0187c7fdfa62c649a6dcf73f554cb10a2a2
