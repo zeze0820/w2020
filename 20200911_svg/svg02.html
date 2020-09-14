@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<title>Document</title>
+	<style>
+		.myType{width: 500px;height: 250px;margin:auto;background: skyblue;}
+		.myType path{
+			stroke:#fff;stroke-width:1.1;fill:pink;
+			animation:tView 1.5s forwards;
+		}
+
+		@keyframes tView{
+			from{opacity:0;}
+			to{opacity:1;}
+		}
+	</style>
+	<script>
+		$(function(){
+			// $(".myType path").eq(0).getTotalLength();
+			// $(".myType path").get(0).getTotalLength(); path 길이 구하기
+
+			var pathes = $(".myType").find("path");
+			var pathLength = pathes.length; //path의 개수구하기 
+
+			for(var i=0;i<pathLength;i++){
+				var path = $(".myType path").get(i);
+
+				var total_length = path.getTotalLength();
+
+				//초기값
+				path.style.strokeDasharray = total_length;
+				path.style.strokeDashoffset = total_length;
+
+				//애니메이
+				$(path).animate({"strokeDashoffset":0},1000)
+			}
+
+		});
+	</script>
+</head>
+<body>
+	<div class="myType">
+		<svg version="1.1" id="Layer_1" x="0px" y="0px"
+	 viewBox="0 0 200 100" style="enable-background:new 0 0 200 100;">
+		<g>
+			<path d="M47.2,25.45v37.99c0,8.18-6.41,11.12-14.59,11.12c-8.12,0-13.79-2.94-13.79-11.12v-7.21h11.49v5.34
+				c0,2.08,0.75,3.31,2.83,3.31s2.83-1.23,2.83-3.31V25.45H47.2z"/>
+			<path d="M63.23,73.49H51.48V25.45h11.76V73.49z"/>
+			<path d="M94.76,25.45v18.44h7.27V25.45h11.22v48.04h-11.22V53.55h-7.27v19.93H83.54V25.45H94.76z"/>
+			<path d="M125.81,25.45l5.24,18.86l4.81-18.86h11.22l-10.26,30.89v17.15h-11.76V56.22l-9.94-30.78H125.81z"/>
+			<path d="M148.74,25.45h29.18v9.89h-17.95v9.08h17.42v9.35h-17.42v9.83h18.49v9.89h-29.71V25.45z"/>
+		</g>
+		</svg>
+	</div>
+</body>
+</html>
